@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Active Nav Example</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#header {
+			margin: 25px auto;
+			padding: 30px 0;
+			height: 92px;
+		}
+
+		/* Nav Meu Container */
+		#nav-menu-container {
+		  margin: 0;
+		}
+
+
+		/* Nav Meu Styling */
+		.nav-menu a {
+		  padding: 0 8px 10px 8px;
+		  text-decoration: none;
+		  display: inline-block;
+		  color: #333;
+		  font-family: "Montserrat", sans-serif;
+		  font-weight: 700;
+		  font-size: 13px;
+		  text-transform: uppercase;
+		  outline: none;
+		  transition: .2s;
+		}
+
+		/* Hover and also Active Menu Item */
+		.nav-menu li:hover > a, 
+		.nav-menu > .menu-active > a {
+		  color: #18d26e;
+		}
+
+		.nav-menu > li {
+			display: inline-block;	
+		  	margin-left: 10px;
+		}
+
+		.nav-menu ul {
+		  margin: 4px 0 0 0;
+		  padding: 10px;
+		  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+		  background: #fff;
+		}
+
+		.nav-menu ul li {
+		  transition: 0.3s;
+		}
+
+		.nav-menu ul li a {
+		  padding: 10px;
+		  color: #333;
+		  transition: 0.3s;
+		  display: block;
+		  font-size: 13px;
+		  text-transform: none;
+		}
+
+		.nav-menu ul li:hover > a {
+		  color: #18d26e;
+		}
+
+		.nav-menu ul ul {
+		  margin: 0;
+		}
+
+		.container {
+			width: 660px;
+			height: auto;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.title {
+			padding: 0 8px 10px 8px;
+		  	color: #333;
+		  	font-family: "Montserrat", sans-serif;
+		  	font-weight: 700;
+		  	font-size: 16px;
+		  	text-transform: uppercase;
+		  	text-decoration: underline;
+		  	text-align: left;
+		  	margin-bottom: 50px;
+		}
+		.footer {
+			width: 100%;
+			min-height: 30px;
+		    position: absolute;
+		    bottom: 0;
+		    background: #ebebeb;
+		    display: block;
+		    padding: 20px 0;
+		}
+		.footer_text {
+			color: #333;
+		  	font-family: "Montserrat", sans-serif;
+		  	font-weight: 700;
+		  	font-size: 16px;
+		  	text-transform: uppercase;
+		  	text-decoration: none;
+		  	text-align: center;
+		}
+		.footer_text a {
+			color: #18d26e;
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+	<header id="header">
+	    <div class="container">
+	    	<h1 class="title">This is the Example of Nav Item</h1>
+	    	<p></p>
+	      	<nav id="nav-menu-container">
+		        <ul class="nav-menu">
+		          <li class="menu-active"><a href="#">Home</a></li>
+		          <li><a href="#">About Us</a></li>
+		          <li><a href="#">Services</a></li>
+		          <li><a href="#">Portfolio</a></li>
+		          <li><a href="#">Team</a></li>
+		          <li><a href="#">Contact</a></li>
+		        </ul>
+	      	</nav><!-- #nav-menu-container -->
+
+	    </div>
+  	</header><!-- #header -->
+
+  	<footer class="footer">
+	  	<p class="footer_text"><a href="https://khandakerakash.xyz/" target="_blank">Khandaker Akash</a> Copyright © 2018 All right reserved.</p>
+  	</footer>
+
+  <script
+  	src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  	integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  	crossorigin="anonymous">
+  </script>
+  <script type="text/javascript">
+  	jQuery(document).ready(function( $ ) {
+  		//Active Nav Item
+  		$('.nav-menu a').on('click', function() {
+  			if ($(this).parents('.nav-menu').length) {
+	          $('.nav-menu .menu-active').removeClass('menu-active');
+	          $(this).closest('li').addClass('menu-active');
+	        }
+	  	});
+	});
+  </script>
+</body>
+</html>
